@@ -1,35 +1,64 @@
-import { useState } from 'react';
-import Button from './Button';
-import TextField from './TextField';
-import './App.css';
+import { Button, Card, CardContent, Container, TextField } from '@mui/material'
+import { useState } from 'react'
+import './App.css'
 
 function App() {
-  const [projectName, setProjectName] = useState('');
+  const [inputValue, setInputValue] = useState('')
+  const [inputValue2, setInputValue2] = useState('')
+  const [projectName, setProjectName] = useState('')
+  const [projectDescription, setProjectDescription] = useState('')
+  // const [show, setShow] = useState(false)
 
-  function handleInputChange(event) {
-    setProjectName(event.target.value);
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value)
+  }
+  
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value)    
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log('Submitted project name:', projectName);
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setProjectName(inputValue)
+    setProjectDescription(inputValue2)
+    setInputValue('')
+    setInputValue2('')
   }
 
   return (
-    <>
-      <main>
-        <form onSubmit={handleSubmit}>
-          <TextField 
-            fieldName="projectName" 
-            value={projectName} 
-            onChange={handleInputChange} 
+    <main>
+      <Container maxWidth="sm">
+        <form className="form-add-project" onSubmit={handleSubmit}>
+          <TextField
+            id="standard-basic"
+            label="Name your project"
+            variant="outlined"
+            value={inputValue}
+            onChange={handleInputChange}
           />
-          <Button type="submit">Submit</Button>
+          <TextField
+            id="standard-basic"
+            label="Add description"
+            variant="outlined"
+            value={inputValue2}
+            onChange={handleInputChange2}
+          />
+          <Button type="submit" variant="outlined">
+            Submit
+          </Button>
         </form>
-        <div>Project Name: {projectName}</div>
-      </main>
-    </>
-  );
+      </Container>
+      <Container>
+        {(projectName  && projectDescription) &&  (
+        <Card variant="outlined" sx={{ maxWidth: 275 }}>
+          <CardContent>
+            {projectName + " " + projectDescription}            
+          </CardContent>
+        </Card>
+        )}
+      </Container>
+    </main>
+  )
 }
 
-export default App;
+export default App
