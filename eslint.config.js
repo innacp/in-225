@@ -4,5 +4,6 @@ export default antfu({
   react: true,
   rules: {
     'no-unused-vars': 'off',
+    'semi': ['error', 'always'],
   },
 })
