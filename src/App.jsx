@@ -1,9 +1,9 @@
-import { Button, Card, CardContent, Container, TextField } from '@mui/material';
+// import { Button, Card, CardContent, Container, TextField } from '@mui/material';
 import { useState } from 'react';
-import ProjectInputs from './components/ProjectInputs';
+import CreateProjectForm from './components/CreateProjectForm';
 import ProjectsList from './components/ProjectsList'
 import { generateUniqueId } from './utils/utils'
-import './App.css'
+import './styles/App.css'
 
 const initialProject = {
   id: '',
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <ProjectInputs
+      <CreateProjectForm
         project={project}
         setProject={setProject}
         error={error}
