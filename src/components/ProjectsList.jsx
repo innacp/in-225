@@ -24,4 +24,5 @@ export default function ProjectsList({ projects }) {
         : 'No Projects'}
     </>
   );
+  );
 }
