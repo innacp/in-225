@@ -1,7 +1,7 @@
-import { Button, Container, TextField } from '@mui/material'
+import { Button, Container, TextField } from '@mui/material';
 
 export default function ProjectInputs({ project, setProject, error, handleSubmit }) {
-  const { name, description } = project
+  const { name, description } = project;
 
   return (
 
@@ -30,6 +30,5 @@ export default function ProjectInputs({ project, setProject, error, handleSubmit
         </Button>
       </form>
     </Container>
-  )
-
+  );
 }

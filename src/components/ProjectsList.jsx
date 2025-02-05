@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { Card, CardContent } from '@mui/material'
 import TimeTracker from './TimeTracker';
+=======
+import { Card, CardContent } from '@mui/material';
+>>>>>>> 71525e23e0cc06e3ed1b8b3cedd8f44ef86cc3f7
 
 export default function ProjectsList({ projects }) {
   return (
@@ -23,6 +27,5 @@ export default function ProjectsList({ projects }) {
           )
         : 'No Projects'}
     </>
-  )
-
+  );
 }
