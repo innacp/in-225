@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import CreateProjectForm from './components/CreateProjectForm';
 import ProjectsList from './components/ProjectsList';
-import TimeTracker from './components/TimeTracker';
 import { generateUniqueId } from './utils/utils';
 import './styles/App.css';
 
@@ -14,9 +13,7 @@ const initialProject = {
 
 function App() {
   const [error, setError] = useState(false);
-  const [error, setError] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [project, setProject] = useState(initialProject);
   const [project, setProject] = useState(initialProject);
 
   const { name, description } = project;
@@ -54,8 +51,6 @@ function App() {
       <ProjectsList projects={projects} />
     </>
   );
-  );
 }
 
-export default App;
 export default App;
