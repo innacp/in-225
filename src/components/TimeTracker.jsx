@@ -1,25 +1,24 @@
-import { Button } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { Button } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 export default function TimeTracker() {
   const [currentTime, setCurrentTime] = useState(0);
   const [toggleTimer, setToggleTimer] = useState(false);
 
   useEffect(() => {
-    let interval = null;                       // mount, unmount, watcher
+    let interval = null; // mount, unmount, watcher
     if (toggleTimer) {
       interval = setInterval(() => {
-        setCurrentTime(currentTime + 1)      // ++ reassigns new value
-      }, 1000) 
+        setCurrentTime(currentTime + 1); // ++ reassigns new value
+      }, 1000);
     }
     return () => clearInterval(interval);
-  }, [currentTime, toggleTimer])              // dependency array (vid chogo zalezhyt useEffect)
+  }, [currentTime, toggleTimer]); // dependency array (vid chogo zalezhyt useEffect)
 
   function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`
-
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   }
 
   return (
@@ -34,7 +33,7 @@ export default function TimeTracker() {
       </Button>
       <div className="timePassed">{formatTime(currentTime)}</div>
     </div>
-  )
+  );
 }
 // damashka
 
