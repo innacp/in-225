@@ -1,9 +1,8 @@
-import { Button, Card, CardContent, Container, TextField } from '@mui/material';
 import { useState } from 'react';
-import ProjectInputs from './components/ProjectInputs';
+import CreateProjectForm from './components/CreateProjectForm';
 import ProjectsList from './components/ProjectsList';
 import { generateUniqueId } from './utils/utils';
-import './App.css';
+import './styles/App.css';
 
 const initialProject = {
   id: '',
@@ -21,10 +20,13 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    event.preventDefault();
     if (!name.trim() || !description.trim()) {
+      setError(true);
       setError(true);
       return;
     }
+    setError(false);
     setError(false);
 
     setProjects(prev => (
@@ -35,11 +37,12 @@ function App() {
     ));
 
     setProject(initialProject);
+    setProject(initialProject);
   };
 
   return (
     <>
-      <ProjectInputs
+      <CreateProjectForm
         project={project}
         setProject={setProject}
         error={error}
