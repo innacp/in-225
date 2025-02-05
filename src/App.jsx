@@ -1,30 +1,31 @@
 import { Button, Card, CardContent, Container, TextField } from '@mui/material';
 import { useState } from 'react';
 import ProjectInputs from './components/ProjectInputs';
-import ProjectsList from './components/ProjectsList'
-import { generateUniqueId } from './utils/utils'
-import './App.css'
+import ProjectsList from './components/ProjectsList';
+import { generateUniqueId } from './utils/utils';
+import './App.css';
 
 const initialProject = {
   id: '',
   name: '',
   description: '',
+  ahah: '',
 };
 
 function App() {
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [project, setProject] = useState(initialProject)
+  const [project, setProject] = useState(initialProject);
 
   const { name, description } = project;
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     if (!name.trim() || !description.trim()) {
-      setError(true)
+      setError(true);
       return;
     }
-    setError(false)
+    setError(false);
 
     setProjects(prev => (
       [...prev, {
@@ -33,7 +34,7 @@ function App() {
       }]
     ));
 
-    setProject(initialProject)
+    setProject(initialProject);
   };
 
   return (
@@ -46,7 +47,7 @@ function App() {
       />
       <ProjectsList projects={projects} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

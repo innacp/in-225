@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@mui/material'
+import { Card, CardContent } from '@mui/material';
 
 export default function ProjectsList({ projects }) {
   return (
@@ -18,6 +18,5 @@ export default function ProjectsList({ projects }) {
           )
         : 'No Projects'}
     </>
-  )
-
+  );
 }
