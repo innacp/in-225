@@ -1,22 +1,14 @@
-// import { Button, Card, CardContent, Container, TextField } from '@mui/material';
 import { useState } from 'react';
-<<<<<<< HEAD
 import CreateProjectForm from './components/CreateProjectForm';
-import ProjectsList from './components/ProjectsList'
-import { generateUniqueId } from './utils/utils'
-import './styles/App.css'
-=======
-import ProjectInputs from './components/ProjectInputs';
 import ProjectsList from './components/ProjectsList';
+import TimeTracker from './components/TimeTracker';
 import { generateUniqueId } from './utils/utils';
-import './App.css';
->>>>>>> 71525e23e0cc06e3ed1b8b3cedd8f44ef86cc3f7
+import './styles/App.css';
 
 const initialProject = {
   id: '',
   name: '',
   description: '',
-  ahah: '',
 };
 
 function App() {
