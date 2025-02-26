@@ -35,6 +35,7 @@ export default function TimeTracker() {
     </div>
   );
 }
+
 // damashka
 
 // 1. save time to localStorage (check in useEffect)
