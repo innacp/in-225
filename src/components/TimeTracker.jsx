@@ -1,3 +1,5 @@
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import StopIcon from '@mui/icons-material/Stop';
 import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
@@ -28,8 +30,14 @@ export default function TimeTracker() {
         variant="outlined"
         onClick={() => setToggleTimer(!toggleTimer)}
         className="start"
+        sx={{
+          width: '25px',
+          height: '30px',
+          minWidth: '25px',
+          borderRadius: '50%',
+        }}
       >
-        {toggleTimer ? 'pause' : 'start'}
+        {toggleTimer ? <StopIcon /> : <PlayArrowIcon />}
       </Button>
       <div className="timePassed">{formatTime(currentTime)}</div>
     </div>

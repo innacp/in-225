@@ -48,7 +48,9 @@ function App() {
         error={error}
         handleSubmit={handleSubmit}
       />
-      <ProjectsList projects={projects} />
+      <ProjectsList
+        projects={projects}
+      />
     </>
   );
 }

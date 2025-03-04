@@ -20,11 +20,20 @@
 
 .list-container {  
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  max-width: 250px;
 }
 
 .tracker {
   display: flex;
   gap: 1em;
   align-items: center;
+}
+
+.form-add-project {
+  max-width: fit-content;
+  margin: 0 auto;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
 }

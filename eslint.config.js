@@ -8,5 +8,10 @@ export default antfu({
   rules: {
     'no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'off',
+    'object-curly-newline': ['error', {
+      multiline: true,
+      consistent: true,
+    }],
+    'object-property-newline': ['error', { allowAllPropertiesOnSameLine: false }],
   },
 });
